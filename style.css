@@ -1,0 +1,526 @@
+    :root {
+        --purple-primary: #8C2bee;
+        --purple-dark: #631baf;
+        --purple-footer: #2b1d5c;
+        --purple-subfooter: #1e1344;
+        --green-primary: #76cf00;
+        --green-dark: #5fa800;
+        --yellow-badge: #f7a81b;
+        --text-main: #2c3038;
+        --text-muted: #667085;
+        --bg-light: #f7f9fc;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-light);
+        color: var(--text-main);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* HEADER & NAV */
+    header {
+        background: transparent;
+        padding: 20px 20px 0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 100;
+    }
+
+    .nav-container {
+        background: #ffffff;
+        width: 100%;
+        max-width: 1050px;
+        padding: 6px 36px 6px 28px;
+        border-radius: 50px;
+        /* Creates the white pill shape */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo img {
+        height: 38px;
+        width: auto;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 16px;
+        color: #1f1b38;
+        padding: 14px 26px;
+        border-radius: 8px;
+        /* Slightly rounded corners for the active box */
+        transition: all 0.2s ease;
+    }
+
+    nav li.active a,
+    nav a:hover {
+        background: #8c2bee;
+        color: #ffffff;
+    }
+
+    /* Adjust top padding of .hero since header is now inside it */
+    .hero {
+        background: url('Images/herobanner_short.png') no-repeat center top / cover;
+        padding: 0 20px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+
+    .hero-content {
+        padding-top: 450px;
+        /* Pushes the buttons below the banner artwork */
+
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content img {
+        width: 100%;
+        /* Fills the 36x36 container */
+        height: 100%;
+        object-fit: cover;
+        /* Use 'contain' if the PNG already has transparent padding */
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff;
+        text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+    }
+
+
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+        transition: transform 0.1s;
+    }
+
+    .btn:active {
+        transform: translateY(2px);
+    }
+
+    .btn-purple {
+        background: var(--purple-primary);
+        box-shadow: 0 4px 0 var(--purple-dark);
+    }
+
+    .btn-green {
+        background: var(--green-primary);
+        box-shadow: 0 4px 0 var(--green-dark);
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* Pushes h2 to the left and p to the right */
+        align-items: center;
+        /* Aligns them vertically in the center */
+        width: 100%;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .section-title p {
+        color: var(--text-muted);
+        font-weight: 600;
+        margin: 0;
+        text-align: right;
+        /* Keeps text aligned cleanly to the right */
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-banner {
+        height: 140px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-banner.creative {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+            url('Images/creative.png') no-repeat center center / cover;
+    }
+
+    .card-banner.pvp {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+            url('Images/pvp.png') no-repeat center center / cover;
+    }
+
+    .card-banner.survival {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+            url('Images/smp.png') no-repeat center center / cover;
+    }
+
+    .card-banner.minigames {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+            url('Images/parkour.png') no-repeat center center / cover;
+    }
+
+    .card-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: white;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .tag-community {
+        color: var(--green-primary);
+    }
+
+    .tag-event {
+        color: var(--purple-primary);
+    }
+
+    .banner-title {
+        color: white;
+        font-size: 24px;
+        font-weight: 800;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-body {
+        padding: 20px;
+        flex: 1;
+    }
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .card-details {
+        list-style: none;
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
+
+    .card-details li {
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .card-btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    /* CATEGORY CARDS */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+
+    .category-card {
+        padding: 24px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .category-card.purple {
+        background: #f3e8ff;
+    }
+
+    .category-card.green {
+        background: #e8f8d9;
+    }
+
+    .category-info h3 {
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    .category-info.purple h3 {
+        color: var(--purple-primary);
+    }
+
+    .category-info.green h3 {
+        color: var(--green-dark);
+    }
+
+    .category-info p {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .arrow-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #fdb813;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: 800;
+        box-shadow: 0 3px 0 #d99b00;
+    }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+        margin-bottom: 80px;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        align-items: center;
+    }
+
+    .step-card {
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .step-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .step-icon.yellow {
+        background: #fff3d1;
+        color: #f7a81b;
+    }
+
+    .step-icon.purple {
+        background: #f3e8ff;
+        color: var(--purple-primary);
+    }
+
+    .step-icon.green {
+        background: #e8f8d9;
+        color: var(--green-primary);
+    }
+
+    .step-text h4 {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 4px;
+    }
+
+    .step-text p {
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+        background: var(--purple-footer);
+        color: white;
+        padding-top: 60px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px 40px;
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr) 1.5fr;
+        gap: 40px;
+    }
+
+    .footer-brand .logo {
+        color: white;
+        margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+        color: #b3a9d6;
+        font-size: 14px;
+    }
+
+    .footer-column h5 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+    }
+
+    .footer-column li {
+        margin-bottom: 10px;
+    }
+
+    .footer-column a {
+        color: #b3a9d6;
+        font-size: 14px;
+        transition: color 0.2s;
+    }
+
+    .footer-column a:hover {
+        color: white;
+    }
+
+
+
+
+
+    .social-links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .footer_link_icons {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        /* Use 8px instead if your icons are rounded squares */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .footer_link_icons:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+
+    .footer_link_icons img {
+        width: 100%;
+        /* Fills the 36x36 container */
+        height: 100%;
+        object-fit: cover;
+        /* Use 'contain' if the PNG already has transparent padding */
+        display: block;
+    }
+
+    .subfooter {
+        background: var(--purple-subfooter);
+        padding: 20px;
+        font-size: 13px;
+        color: #8c7fb8;
+        border-top: 1px solid #ffffff;
+    }
+
+
+    .subfooter-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
