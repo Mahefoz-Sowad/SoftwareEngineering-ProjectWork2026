@@ -95,13 +95,25 @@
 
 
     .hero-content {
-        padding-top: 450px;
-        /* Pushes the buttons below the banner artwork */
-
         max-width: 800px;
         margin: 0 auto;
+        padding-top: 40px;
+        /* Increase or decrease this single value to move the title & buttons up/down */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: relative;
         z-index: 2;
+    }
+
+    .hero-title-img {
+        width: 100%;
+        max-width: 560px;
+        /* Controls the size of the title graphic */
+        height: auto;
+        display: block;
+        margin-bottom: 24px;
+        /* Space between the yellow ribbon and the buttons */
     }
 
     .hero-content img {
@@ -184,6 +196,45 @@
         align-items: center;
         gap: 10px;
         margin: 0;
+
+    }
+
+    /* Centers the "How it works" title without affecting "Featured" */
+    .section-title.center {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section-title.center img {
+        height: 55px;
+        /* Adjust between 36px and 48px to match your desired title size */
+        width: auto;
+        display: block;
+        mix-blend-mode: multiply;
+        /* Blends the JPEG's light background seamlessly into your page background */
+    }
+
+    .steps-grid {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    .step-card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        flex: 1;
+        /* Makes all 3 cards share equal width */
+        min-width: 0;
+        /* Prevents long text from forcing a card to wrap */
     }
 
     .section-title p {
@@ -523,4 +574,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+
+    /* Optional: stack only on small phone screens */
+    @media (max-width: 768px) {
+        .steps-grid {
+            flex-wrap: wrap;
+        }
     }
