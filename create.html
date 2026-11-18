@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayPals - Create a Listing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="create_style.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- HERO SECTION (Matches index.html structure & assets) -->
+    <section class="hero">
+        <header>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Images/mainlogo.png" alt="PlayPals Home">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="communities.html">Communities</a></li>
+                        <li class="active"><a href="create.html">Create</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <img src="Images/herobanner_title_combined.png" alt="Find Minecraft events and communities"
+                class="hero-title-img">
+        </div>
+    </section>
+
+    <!-- MAIN FORM CONTAINER -->
+    <main class="container">
+        <section class="create-listing-section" id="form">
+            <div class="create-header">
+                <div class="create-title-group">
+                    <span class="plus-badge">+</span>
+                    <h2>Create a Listing</h2>
+                    <span class="sparkle-accent" aria-hidden="true">✨</span>
+                </div>
+                <p>Add your event or community to PlayPals and let others discover it!</p>
+            </div>
+
+            <form id="create-listing-form" class="listing-form">
+                <!-- Row 1: Listing Type & Category -->
+                <div class="form-row two-col">
+                    <div class="form-group">
+                        <label>Listing Type <span class="required">*</span></label>
+                        <div class="pill-group full-width">
+                            <label class="pill-radio">
+                                <input type="radio" name="listingType" value="Community" required>
+                                <span>Community</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="listingType" value="Event">
+                                <span>Event</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category <span class="required">*</span></label>
+                        <div class="select-wrapper">
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select a Category</option>
+                                <option value="Survival">Survival (SMP)</option>
+                                <option value="Creative">Creative</option>
+                                <option value="PvP">PvP / Tournament</option>
+                                <option value="Mini Games">Mini Games</option>
+                                <option value="Roleplay">Roleplay</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Title -->
+                <div class="form-group">
+                    <label for="title">Title <span class="required">*</span></label>
+                    <input type="text" id="title" name="title" placeholder="e.g. Happy Valley SMP" required>
+                </div>
+
+                <!-- Row 3: Description -->
+                <div class="form-group">
+                    <label for="description">Description <span class="required">*</span></label>
+                    <textarea id="description" name="description" rows="4"
+                        placeholder="Describe your event or your community" required></textarea>
+                </div>
+
+                <!-- Row 4: Edition, Game Type, Game Version -->
+                <div class="form-row three-col">
+                    <div class="form-group">
+                        <label>Edition <span class="required">*</span></label>
+                        <div class="pill-group">
+                            <label class="pill-radio">
+                                <input type="radio" name="edition" value="Java" required>
+                                <span>Java</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="edition" value="Bedrock">
+                                <span>Bedrock</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Game Type <span class="required">*</span></label>
+                        <div class="pill-group">
+                            <label class="pill-radio">
+                                <input type="radio" name="gameType" value="Vanilla" required>
+                                <span>Vanilla</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="gameType" value="Modded">
+                                <span>Modded</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="version">Game Version/Required Mods/Modpack</label>
+                        <input type="text" id="version" name="version" placeholder="e.g. 1.21.4 (optional)">
+                    </div>
+                </div>
+
+                <!-- Row 5: Access -->
+                <div class="form-group">
+                    <label>Access <span class="required">*</span></label>
+                    <div class="pill-group">
+                        <label class="pill-radio medium">
+                            <input type="radio" name="access" value="Open" required>
+                            <span>Open</span>
+                        </label>
+                        <label class="pill-radio medium">
+                            <input type="radio" name="access" value="Whitelist">
+                            <span>Whitelist</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Row 6: How to Join -->
+                <div class="form-group">
+                    <label for="howToJoin">How to Join <span class="required">*</span></label>
+                    <input type="text" id="howToJoin" name="howToJoin"
+                        placeholder="e.g. Server IP, Discord server info, or how to request access" required>
+                </div>
+
+                <!-- Row 7: Language, Member Limit, Date & Time -->
+                <div class="form-row bottom-three-col">
+                    <div class="form-group">
+                        <label for="language">Language <span class="required">*</span></label>
+                        <div class="select-wrapper">
+                            <select id="language" name="language" required>
+                                <option value="English" selected>English</option>
+                                <option value="Finnish">Finnish</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="German">German</option>
+                                <option value="French">French</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberLimit">Member/Participant limit <span class="required">*</span></label>
+                        <input type="number" id="memberLimit" name="memberLimit" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateTime">Date &amp; Time</label>
+                        <input type="text" id="dateTime" name="dateTime" placeholder="Only for time-based events">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="submit-row">
+                    <button type="submit" class="btn-create-submit">
+                        <span>+</span> Create Listing
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="Images/logo_footer.png" alt="PlayPals Home">
+                </div>
+                <h3>Gaming events and<br>communities in one place.</h3>
+            </div>
+
+            <div class="footer-column">
+                <h5>Platform</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="communities.html">Communities</a></li>
+                    <li><a href="create.html">Create Listing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Community Rules</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h5>Follow Us</h5>
+                <div class="social-links">
+                    <a href="#" class="footer_link_icons"><img src="Images/discordicon.png" alt="discord icon"></a>
+                    <a href="#" class="footer_link_icons"><img src="Images/yt.png" alt="yt icon"></a>
+                    <a href="#" class="footer_link_icons"><img src="Images/igicon.png" alt="IG icon"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="subfooter">
+            <div class="subfooter-content">
+                <span>&copy; 2026 PlayPals. All rights reserved.</span>
+                <span>Made for gamers, by gamers.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
